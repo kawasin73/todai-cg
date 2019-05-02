@@ -6,6 +6,9 @@ REPO_URL="https://github.com/kawasin73/legacygl.js.git"
 REPO_DIR="./legacygl.js"
 DEST_DIR="./public/lib"
 DEST="${DEST_DIR}/legacygl.js"
+FILES="boundingbox.js camera.js colormap.js drawutil.js gl-matrix.js \
+    gl-matrix-util.js glu.js halfedge.js legacygl.js meshio.js \
+    numeric-1.2.6.js numeric-util.js util.js"
 
 #
 # download legacygl.js
@@ -35,7 +38,7 @@ echo "// legacygl.js"                                          >> ${DEST}
 echo "// Copy From https://bitbucket.org/kenshi84/legacygl.js" >> ${DEST}
 echo "// ====================================================" >> ${DEST}
 
-for pathname in ./legacygl.js/*.js; do
+for pathname in ${FILES}; do
 
     echo "combine ${pathname}"
 
@@ -46,7 +49,7 @@ for pathname in ./legacygl.js/*.js; do
     echo "// ====================================================" >> ${DEST}
 
     # append source code
-    cat ${pathname} >> ${DEST}
+    cat "${REPO_DIR}/${pathname}" >> ${DEST}
 done
 
 echo "created dest file ${DEST}"
