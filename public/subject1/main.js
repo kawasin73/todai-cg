@@ -6,8 +6,14 @@ var camera;
 var p0, p1, p2;
 var selected = null;
 
+function internal_division(a, b, t) {
+    return numeric.add(numeric.mul(t, a), numeric.mul(1 - t, b));
+}
+
 function eval_quadratic_bezier(p0, p1, p2, t) {
-    return numeric.add(numeric.mul(1 - t, p0), numeric.mul(t, p2));     // TODO
+    var p01 = internal_division(p0, p1, t);
+    var p12 = internal_division(p1, p2, t);
+    return internal_division(p01, p12, t);
 }
 
 
