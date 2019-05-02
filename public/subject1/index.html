@@ -4,8 +4,31 @@
         <title>コンピュータグラフィクス論課題1</title>
         <meta charset="UTF-8">
         <script src="/lib/legacygl.js"></script>
+        <script src="./main.js"></script>
     </head>
-    <body>
-        <p>hello world</p>
+    <body onload="init(); draw();">
+        <canvas id="canvas" width="640" height="480" style="border:1px solid #000000"></canvas>
+        <table>
+            <tr>
+            <td>Number of Steps:</td>
+            <td colspan="2"><input type="number" id="input_numsteps" onchange="draw();" step="1" min="2" value="20"></td>
+            </tr>
+            <tr>
+            <td>Show Control Points:</td>
+            <td colspan="2"><input type="checkbox" id="input_show_controlpoints" onchange="draw();" checked></td>
+            </tr>
+            <tr>
+            <td>Show Sample Points:</td>
+            <td colspan="2"><input type="checkbox" id="input_show_samplepoints" onchange="draw();" checked></td>
+            </tr>
+        </table>
+        <h3>Usage:</h3>
+        <ul>
+            <li>Drag: Move Control Points</li>
+            <li>Alt+Drag: Camera Pan</li>
+            <li>Alt+Shift+drag: Camera Zoom</li>
+        </ul>
+        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        <script src="https://button.glitch.me/button.js"></script>
     </body>
 </html>
