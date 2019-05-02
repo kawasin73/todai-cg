@@ -4,7 +4,20 @@ var legacygl;
 var drawutil;
 var camera;
 var p0, p1, p2;
+var controlPoints;
 var selected = null;
+
+function factorial(k) {
+    var result = 1;
+    for (var i = 1; i <= k; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+function combination(n, k) {
+    return factorial(n) / (factorial(k) * factorial(n-k));
+}
 
 function internal_division(a, b, t) {
     return numeric.add(numeric.mul(t, a), numeric.mul(1 - t, b));
@@ -16,6 +29,19 @@ function eval_quadratic_bezier(p0, p1, p2, t) {
     return internal_division(p01, p12, t);
 }
 
+function eval_bezier(a, b, controls, t) {
+    if (controls.length < 1) {
+        console.error("number of control points is not enough. length: ", controls.length);
+    }
+    var n = 1 + controls.length;
+    var sum = numeric.mul(Math.pow((1 - t), n), a);
+    for (var i = 0; i < controls.length; i++) {
+        var j = i + 1;
+        sum = numeric.add(sum, numeric.mul(combination(n, j) * Math.pow(t, j) * Math.pow((1 - t), n - j), controls[i]));
+    }
+    sum = numeric.add(sum, numeric.mul(Math.pow(t, n), b));
+    return sum;
+}
 
 function draw() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
@@ -35,7 +61,7 @@ function draw() {
     var numsteps = Number(document.getElementById("input_numsteps").value);
     for (var i = 0; i <= numsteps; ++i) {
         var t = i / numsteps;
-        legacygl.vertex2(eval_quadratic_bezier(p0, p1, p2, t));
+        legacygl.vertex2(eval_bezier(p0, p2, [p1], t));
     }
     legacygl.end();
     // draw sample points
@@ -43,7 +69,7 @@ function draw() {
         legacygl.begin(gl.POINTS);
         for (var i = 0; i <= numsteps; ++i) {
             var t = i / numsteps;
-            legacygl.vertex2(eval_quadratic_bezier(p0, p1, p2, t));
+            legacygl.vertex2(eval_bezier(p0, p2, [p1], t));
         }
         legacygl.end();
     }
