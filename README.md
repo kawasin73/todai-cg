@@ -2,7 +2,9 @@
 
 東京大学理学部情報科学科のコンピュータグラフィクス論の課題です。
 
-http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/
+授業URL: http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/
+
+デモURL: https://kawasin73-todai-cg.netlify.com/
 
 ## 課題
 
@@ -12,6 +14,8 @@ http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/
 
 課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-1-spline.pdf
 サンプル : https://utokyo-iscg-2019-assigment-spline.glitch.me/
+
+デモ: https://kawasin73-todai-cg.netlify.com/subject1/
 
 ## 開発
 
