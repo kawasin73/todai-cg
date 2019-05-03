@@ -7,6 +7,7 @@
         <script src="./main.js"></script>
     </head>
     <body onload="init(); draw();">
+        <h1>一般のn次ベジェ曲線</h1>
         <canvas id="canvas" width="640" height="480" style="border:1px solid #000000"></canvas>
         <table>
             <tr>
@@ -21,14 +22,21 @@
             <td>Show Sample Points:</td>
             <td colspan="2"><input type="checkbox" id="input_show_samplepoints" onchange="draw();" checked></td>
             </tr>
+            <tr>
+            <td>Add Control Points:</td>
+            <td colspan="2"><input type="checkbox" id="input_add_controlpoints" onchange="draw();"></td>
+            </tr>
         </table>
         <h3>Usage:</h3>
         <ul>
             <li>Drag: Move Control Points</li>
             <li>Alt+Drag: Camera Pan</li>
             <li>Alt+Shift+drag: Camera Zoom</li>
+            <li>Add Control Points のチェックボックスを有効にした状態で、キャンバス内をクリックすると制御点が追加されます。</li>
         </ul>
-        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-        <script src="https://button.glitch.me/button.js"></script>
+        <h3>説明</h3>
+        <p>ソースコードは、<a href="https://github.com/kawasin73/todai-cg/tree/master/public/subject1">https://github.com/kawasin73/todai-cg/tree/master/public/subject1</a> に公開しています。</p>
+        <p>一般の n 次ベジェ曲線を描画するようにサンプルコードを修正しました。</p>
+        <p>また、制御点を追加できるようにして、追加される度にベジェ曲線の次数が自動で上がるようにしました。</p>
     </body>
 </html>
