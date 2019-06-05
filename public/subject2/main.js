@@ -10,10 +10,16 @@ var linkages = [
     { angle : 0, length : 0.7 },
 ];
 var is_dragging = false;
+var max_angle = 360;
 
 function update_position() {
     linkages.forEach(function(linkage, index){
         linkage.position = [0, 0];
+        if (linkage.angle > max_angle) {
+            linkage.angle = max_angle;
+        } else if (linkage.angle < -max_angle) {
+            linkage.angle = -max_angle;
+        }
         var angle_sum = 0;
         for (var j = 0; j <= index; ++j) {
             angle_sum += linkages[j].angle;
@@ -172,6 +178,11 @@ function init() {
     document.getElementById("input_angle").onchange = function(){
         var selected = document.getElementById("input_selected").value;
         linkages[selected].angle = Number(document.getElementById("input_angle").value);
+        update_position();
+        draw();
+    };
+    document.getElementById("input_max_angle").onchange = function(){
+        max_angle = Number(document.getElementById("input_max_angle").value);
         update_position();
         draw();
     };
