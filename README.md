@@ -17,6 +17,15 @@
 
 デモ: https://kawasin73-todai-cg.netlify.com/subject1/
 
+### 課題2
+
+2D で Cyclic Coordinate Descent 法によって IK を実装せよ。
+
+課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-2-ik.pdf
+サンプル : https://utokyo-iscg-2019-assigment-ik.glitch.me/
+
+デモ: https://kawasin73-todai-cg.netlify.com/subject2/
+
 ## 開発
 
 ```bash
