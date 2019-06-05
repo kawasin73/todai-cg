@@ -23,8 +23,25 @@ function update_position() {
     });
 };
 
+function vec_sub(a, b) {
+    return [b[0]-a[0], b[1]-a[1]];
+}
+
 function compute_ik(target_position) {
-    // TODO
+    for (var i = linkages.length - 1; i >= 0; i--) {
+        var base_position = (linkages[i-1]|| {position: [0, 0]}).position;
+        var top_position = linkages[linkages.length-1].position;
+        var vec_a = vec_sub(base_position, target_position);
+        var vec_b = vec_sub(base_position, top_position);
+
+        // calc angle
+        // http://www5d.biglobe.ne.jp/~noocyte/Programming/Geometry/RotationDirection.html
+        var dot = vec_a[0] * vec_b[0] + vec_a[1] * vec_b[1];
+        var prod = vec_a[0] * vec_b[1] - vec_a[1] * vec_b[0];
+        var angle = Math.atan2(prod, dot) / Math.PI * 180;
+        linkages[i].angle -= angle;
+        update_position();
+    }
 };
 
 function draw() {
