@@ -18,7 +18,7 @@
           <li>Selected Linkage: <input type="number" id="input_selected" step="1" min="0" value="0"></li>
           <li>Selected Linkage's Angle: <input type="number" id="input_angle" step="5" value="0"></li>
           <li><input type="checkbox" id="input_ikmode"> IK Mode</li>
-          <li>Max Movable Angle: <input type="number" id="input_max_angle" step="1" min="0" max="360" value="360"></li>
+          <li>Max Movable Angle: <input type="number" id="input_max_angle" step="1" min="0" max="180" value="180"></li>
           <li>Usage:</li>
           <ul>
               <li>Drag: Perform IK</li>
@@ -32,5 +32,11 @@
 
   <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
   <script src="https://button.glitch.me/button.js"></script>
+  <div>
+    <h3>説明</h3>
+    <p>ソースコードは、<a href="https://github.com/kawasin73/todai-cg/tree/master/public/subject2">https://github.com/kawasin73/todai-cg/tree/master/public/subjec2</a> に公開しています。</p>
+    <p>Cyclic Coordinate Descent 法を実装しました。</p>
+    <p>Max Movable Angle を変更することで関節可動域の設定ができます。</p>
+  </div>
 </body>
 </html>
