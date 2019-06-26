@@ -12,8 +12,8 @@
 
 パラメトリック曲線に関する何らかのデモを実装する
 
-課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-1-spline.pdf
-サンプル : https://utokyo-iscg-2019-assigment-spline.glitch.me/
+- 課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-1-spline.pdf
+- サンプル : https://utokyo-iscg-2019-assigment-spline.glitch.me/
 
 デモ: https://kawasin73-todai-cg.netlify.com/subject1/
 
@@ -21,10 +21,18 @@
 
 2D で Cyclic Coordinate Descent 法によって IK を実装せよ。
 
-課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-2-ik.pdf
-サンプル : https://utokyo-iscg-2019-assigment-ik.glitch.me/
+- 課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-2-ik.pdf
+- サンプル : https://utokyo-iscg-2019-assigment-ik.glitch.me/
 
 デモ: https://kawasin73-todai-cg.netlify.com/subject2/
+
+### 課題3
+
+カメラからレイを飛ばし、球もしくは三角形との交点を計算して、なんらかのシェーディングをした結果を表示する
+
+- 課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-4-ray-tracing.pdf
+
+デモ: http://glslsandbox.com/e#55605.0
 
 ## 開発
 
