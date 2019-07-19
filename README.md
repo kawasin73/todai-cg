@@ -34,6 +34,16 @@
 
 デモ: http://glslsandbox.com/e#55605.0
 
+
+### 課題2
+
+バイラテラルフィルタを実装せよ。
+
+- 課題PDF : http://research.nii.ac.jp/~takayama/teaching/utokyo-iscg-2019/assignments/iscg-2019-assignment-3-filter.pdf
+- サンプル : https://utokyo-iscg-2019-assigment-filter.glitch.me/
+
+デモ: https://kawasin73-todai-cg.netlify.com/subject4/
+
 ## 開発
 
 ```bash
